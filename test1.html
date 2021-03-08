@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Task #1</title>
+	 <link rel="stylesheet" type="text/css" href="styles/main.css">
+   	 <link rel="stylesheet" type="text/css" href="styles/<?php echo $_SESSION['theme']; ?>.css" id="theme-link">
+</head>
+<body>
+<?php
+
+session_start();
+
+if(!isset($_SESSION["theme"]))
+{
+    $_SESSION["theme"] = "light";
+}
+?>
+	<div class="wrapper">
+   		 <div class="theme-button" id="theme-button">Change theme</div>
+   	 <main class="main">
+   			 <article class="main__content">
+<h2>Questions</h2>
+<form action="q1.php" method="POST">
+<p>
+	Enter your name:<br>
+	<input type="text" name="fullname">
+</p>
+<p>What it means 200 Status code?</p>
+	<input type="radio" name="q1" value="Bad request"/>Bad request<br>
+	<input type="radio" name="q1" value="OK"/>OK<br>
+	<input type="radio" name="q1" value="Not found"/>Not found<br>
+<p>A loop that never ends?</p>
+<p>
+	<input type="radio" name="q2" value="While loop"/>While loop<br>
+	<input type="radio" name="q2" value="Infinite loop"/>Infinite loop<br>
+	<input type="radio" name="q2" value="for loop"/>for loop<br>	
+</p>
+<p>Which command will stop an infinite loop?</p>
+<p>
+	<input type="radio" name="q3" value="Alt - C"/>Alt - C<br>
+	<input type="radio" name="q3" value="Esc"/>Esc<br>
+	<input type="radio" name="q3" value="Ctrl - C"/>Ctrl - C<br>	
+</p>
+<p>Is it correct initialization variable: "int a;"?</p>
+<p>
+	<input type="checkbox" name="q4"/>Yes<br>
+</p>
+<p>Is it valid operator which can reverse the result: "Not"(SQL)?</p>
+<p>
+	<input type="checkbox" name="q5"/>Yes<br>
+</p>
+<p>Is it corret area of square with side 10 m:"110"?</p>
+<p>
+	<input type="checkbox" name="q6"/>Yes<br>
+</p>
+<input type="submit" name="take result">
+</form>
+</article>
+</main>
+</div>
+ <script type="text/javascript" src="scripts/themes.js"></script>
+</body>
+</html>
